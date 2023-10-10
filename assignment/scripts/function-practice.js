@@ -74,9 +74,21 @@ console.log("Test - should return undefined:", getLast(testArray));
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
-
+  for(let i = 0; i < array.length; i++){
+    if(array[i] == value){
+      return true;
+    }
+  }
+  return false;
 }
-
+let value = 6;
+let array1 = [1, 6, 2, 4];
+let array2 = [0, 8, 7, 9];
+console.log("Created two arrays:");
+console.table(array1);
+console.table(array2);
+console.log("Test - look for 6 in array 1. Should return true:", find(value, array1));
+console.log("Test - look for 6 in array 2. Should return false:", find(value, array2));
 // ----------------------
 // Stretch Goals
 // ----------------------
