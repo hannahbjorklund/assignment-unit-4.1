@@ -89,23 +89,35 @@ console.table(array1);
 console.table(array2);
 console.log("Test - look for 6 in array 1. Should return true:", find(value, array1));
 console.log("Test - look for 6 in array 2. Should return false:", find(value, array2));
+
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  return(letter == string[0]);
 }
-
+let letter = 'a';
+let word1 = 'apple';
+let word2 = 'pants';
+console.log("Test - 'a' and 'apple', should return true:", isFirstLetter(letter, word1));
+console.log("Test - 'a' and 'pants', should return false:", isFirstLetter(letter, word2));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+function sumAll(array) {
   let sum = 0;
   // TODO: loop to add items
-
+  for(let i = 0; i < array.length; i++){
+    sum += array[i];
+  }
   // TODO: return the sum
+  return sum;
 }
+testArray = [5, 10, 15, 20];
+console.log("Using test array:");
+console.table(testArray);
+console.log("Test - return sum. Should return 50:", sumAll(testArray));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
