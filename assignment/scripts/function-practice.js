@@ -82,13 +82,13 @@ function find(value, array) {
   return false;
 }
 let value = 6;
-let array1 = [1, 6, 2, 4];
-let array2 = [0, 8, 7, 9];
+testArray = [1, 6, 2, 4];
+let testArray2 = [0, 8, 7, 9];
 console.log("Created two arrays:");
-console.table(array1);
-console.table(array2);
-console.log("Test - look for 6 in array 1. Should return true:", find(value, array1));
-console.log("Test - look for 6 in array 2. Should return false:", find(value, array2));
+console.table(testArray);
+console.table(testArray2);
+console.log("Test - look for 6 in array 1. Should return true:", find(value, testArray));
+console.log("Test - look for 6 in array 2. Should return false:", find(value, testArray2));
 
 // ----------------------
 // Stretch Goals
@@ -122,15 +122,34 @@ console.log("Test - return sum. Should return 50:", sumAll(testArray));
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {
-
+function allPositive(array) {
+  let newArray = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i] > 0){
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 }
-
+testArray = [0, -3, -1, 1, -5, 7, 10];
+console.log("Using test array:");
+console.table(testArray);
+console.log("Test - should return newArray [1, 7, 10]:", allPositive(testArray));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
-
+// I chose the problem from edabit "Add up the numbers from a single number"
+// https://edabit.com/challenge/4gzDuDkompAqujpRi
+// Make a function that takes a sum of all the numbers from 1 to the provided number
+function sumUpTo(number){
+  let sum = 0;
+  for(let i = 1; i <= number; i++){
+    sum += i;
+  }
+  return sum;
+}
+console.log("Test - sum of all numbers 1 to 5. Should equal 15:", sumUpTo(5));
 
 // DO NOT MODIFY
 // Used for automated testing
